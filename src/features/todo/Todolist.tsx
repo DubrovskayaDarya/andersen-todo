@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useCallback} from "react";
 import {FilterValuesType, TaskType} from "../../app/App";
+import {Task} from "../task/Task";
+import {AddItem} from "../../common/components/addItem/AddItem";
 
 type TodolistPropsType = {
     userName: string
@@ -13,10 +15,33 @@ type TodolistPropsType = {
 }
 
 export const Todolist = (props: TodolistPropsType) => {
-    console.log('todo')
+
+    const addTask = useCallback((title: string) => {
+        props.addTask(title)
+    }, [props.addTask])
+
+
+    const onActiveClickHandler = useCallback(
+        () => props.changeFilter('active'), [props.changeFilter])
+    const onCompletedClickHandler = useCallback(
+        () => props.changeFilter('completed'), [props.changeFilter])
+
+    let tasksForTodolist = props.tasks
+
+    if (props.filter === 'active') {
+        tasksForTodolist = props.tasks.filter(t => !t.isDone)
+    }
+    if (props.filter === 'completed') {
+        tasksForTodolist = props.tasks.filter(t => t.isDone)
+    }
 
     return <div>
-
+        <AddItem addItem={addTask}/>
+        {props.tasks.map(el => <Task key={el.id}
+                                     task={el}
+                                     changeTaskStatus={props.changeTaskStatus}
+                                     changeTaskTitle={props.changeTaskTitle}
+                                     deleteTask={props.deleteTask}/>)}
     </div>
 
 }

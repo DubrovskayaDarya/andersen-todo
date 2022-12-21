@@ -28,6 +28,7 @@ function App() {
     const filter = useSelector<AppRootStateType, FilterValuesType>(state => state.todo.filter);
     const dispatch = useDispatch();
 
+
     const addTask = useCallback(function (title: string) {
         dispatch(addTaskAC(title));
     }, []);
@@ -57,8 +58,14 @@ function App() {
     }, []);
 
 
+
+
     return (
         <div className={style.app}>
+            <header className={style.header}>
+                {userName ? userName : null}
+                {tasks.map(el => el.isDone)}
+            </header>
             {isAuthorised
                 ? <Todolist tasks={tasks}
                             addTask={addTask}

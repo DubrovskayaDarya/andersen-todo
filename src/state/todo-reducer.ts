@@ -7,7 +7,7 @@ type ActionsType = ReturnType<typeof changeFilterAC>
 const initialState: TodolistType = {
     userName: '',
     filter: 'active',
-    isAuthorised: false
+    isAuthorised: false,
 };
 
 export const todoReducer = (state: TodolistType = initialState, action: ActionsType) => {
@@ -30,6 +30,7 @@ export const todoReducer = (state: TodolistType = initialState, action: ActionsT
             }
             return {...state}
         }
+
         default:
             return state;
     }

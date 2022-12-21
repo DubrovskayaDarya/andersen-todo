@@ -1,5 +1,6 @@
 import React, {ChangeEvent, useState} from "react";
 import style from './UserPage.module.css'
+import inputStyle from '../../common/style/CommonStyles.module.css'
 
 type UserPagePropsType = {
     userName: string
@@ -30,7 +31,7 @@ export const UserPage = (props: UserPagePropsType) => {
         <h1>{'Введите своё имя'}</h1>
         <input value={newName}
                onChange={onInputChangeHandler}
-               className={style.customInput}/>
+               className={inputStyle.customInput}/>
         {error ? <div className={style.error}>{error}</div> : null}
         <button onClick={onClickHandler}
                 className={style.customButton}>{'Save'}</button>
