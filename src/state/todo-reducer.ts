@@ -2,10 +2,12 @@ import {FilterValuesType, TodolistType} from "../app/App";
 
 type ActionsType = ReturnType<typeof changeFilterAC>
     | ReturnType<typeof addUserNameAC>
+    | ReturnType<typeof userAuthoriseAC>
 
 const initialState: TodolistType = {
-    name: '',
-    filter: 'active'
+    userName: '',
+    filter: 'active',
+    isAuthorised: false
 };
 
 export const todoReducer = (state: TodolistType = initialState, action: ActionsType) => {
@@ -18,7 +20,13 @@ export const todoReducer = (state: TodolistType = initialState, action: ActionsT
         }
         case "ADD-USER-NAME": {
             if (state) {
-                state.name = action.name;
+                state.userName = action.userName;
+            }
+            return {...state}
+        }
+        case "USER-AUTH": {
+            if (state) {
+                state.isAuthorised = action.status;
             }
             return {...state}
         }
@@ -32,6 +40,10 @@ export const changeFilterAC = (filter: FilterValuesType) => {
     return {type: 'CHANGE-FILTER', filter} as const
 }
 
-export const addUserNameAC = (name: string) => {
-    return {type: 'ADD-USER-NAME', name} as const
+export const addUserNameAC = (userName: string) => {
+    return {type: 'ADD-USER-NAME', userName} as const
+}
+
+export const userAuthoriseAC = (status: boolean) => {
+    return {type: 'USER-AUTH', status} as const
 }
