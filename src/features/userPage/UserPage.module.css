@@ -1,31 +1,31 @@
 .userPageContainer {
-    display: flex;
-    align-items: center;
-    min-width: 30%;
-    flex-direction: column;
-    padding: 20px;
-    margin: 20px;
-    flex-wrap: wrap;
-    border: 1px solid #b6b6b6;
-    border-radius: 10px;
-    background-color: #f1f0f0;
+  display: flex;
+  align-items: center;
+  min-width: 30%;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  flex-wrap: wrap;
+  border: 1px solid #b6b6b6;
+  border-radius: 10px;
+  background-color: #f1f0f0;
 }
 
 .customButton {
-    display: inline-block;
-    padding: 5px 20px;
-    text-align: center;
-    font-family: inherit;
-    font-size: 1rem;
-    border: 1px solid rgba(102, 102, 108, 0.77);
-    border-radius: 10px;
-    margin: 5px;
-    letter-spacing: 0.05rem;
-    background-color: #ddecf1;
-    color: rgba(102, 102, 108, 0.77);
+  display: inline-block;
+  padding: 5px 20px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid rgba(102, 102, 108, 0.77);
+  border-radius: 10px;
+  margin: 5px;
+  letter-spacing: 0.05rem;
+  background-color: #ddecf1;
+  color: rgba(102, 102, 108, 0.77);
 }
 
 .error {
-    color: #d95d5d;
-    margin-bottom: 5px;
+  color: #d95d5d;
+  margin-bottom: 5px;
 }
