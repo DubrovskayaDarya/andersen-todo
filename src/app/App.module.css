@@ -1,0 +1,19 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: #eadad6;
+  align-content: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header {
+  min-width: 100%;
+  display: flex;
+  min-height: 5vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #cbc9c9;
+  border-bottom: 1px solid #b6b6b6;
+  margin-bottom: 10px;
+}
