@@ -13,6 +13,7 @@
     min-height: 5vh;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: #f1f0f0;
-    border: 1px solid #b6b6b6;
+    background-color: #cbc9c9;
+    border-bottom: 1px solid #b6b6b6;
+    margin-bottom: 10px;
 }

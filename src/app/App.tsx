@@ -58,12 +58,10 @@ function App() {
     }, []);
 
 
-
-
     return (
         <div className={style.app}>
             <header className={style.header}>
-                {userName ? userName : null}
+                {userName ? <h2>{userName}</h2> : null}
                 {tasks.map(el => el.isDone)}
             </header>
             {isAuthorised

@@ -2,6 +2,8 @@ import React, {useCallback} from "react";
 import {FilterValuesType, TaskType} from "../../app/App";
 import {Task} from "../task/Task";
 import {AddItem} from "../../common/components/addItem/AddItem";
+import {Tab} from "../tabs/Tab";
+import style from './Todo.module.css'
 
 type TodolistPropsType = {
     userName: string
@@ -35,13 +37,15 @@ export const Todolist = (props: TodolistPropsType) => {
         tasksForTodolist = props.tasks.filter(t => t.isDone)
     }
 
-    return <div>
+    return <div className={style.todoContainer}>
         <AddItem addItem={addTask}/>
-        {props.tasks.map(el => <Task key={el.id}
-                                     task={el}
-                                     changeTaskStatus={props.changeTaskStatus}
-                                     changeTaskTitle={props.changeTaskTitle}
-                                     deleteTask={props.deleteTask}/>)}
+        <Tab filter={props.filter}
+             onActive={onActiveClickHandler}
+             onCompleted={onCompletedClickHandler}/>
+        {tasksForTodolist.map(el => <Task key={el.id}
+                                          task={el}
+                                          changeTaskStatus={props.changeTaskStatus}
+                                          changeTaskTitle={props.changeTaskTitle}
+                                          deleteTask={props.deleteTask}/>)}
     </div>
-
 }

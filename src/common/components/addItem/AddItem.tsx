@@ -1,6 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
-import { IoIosAddCircleOutline } from 'react-icons/io';
 import inputStyle from '../../style/CommonStyles.module.css'
+import {FileAddOutlined} from "@ant-design/icons";
 
 type AddItemPropsType = {
     addItem: (title: string) => void
@@ -41,7 +41,7 @@ export const AddItem = React.memo(function (props: AddItemPropsType) {
             onKeyPress={onKeyPressHandler}
 
         />
-        <IoIosAddCircleOutline onClick={addItem}/>
+        <FileAddOutlined onClick={addItem}/>
         {error ? <div>{error}</div> : null}
     </div>
 })

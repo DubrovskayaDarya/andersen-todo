@@ -1,7 +1,8 @@
 import React, {ChangeEvent, useCallback} from "react";
 import {TaskType} from "../../app/App";
 import {EditableSpan} from "../../common/components/editableSpan/EditableSpan";
-
+import style from './Task.module.css'
+import {DeleteOutlined} from "@ant-design/icons";
 
 type TaskPropsType = {
     task: TaskType
@@ -22,12 +23,12 @@ export const Task = (props: TaskPropsType) => {
 
     const onClickHandler = useCallback(() => props.deleteTask(props.task.id), [props.task.id]);
 
-    return <div>
+    return <div className={style.taskContainer}>
         <input type={'checkbox'}
                checked={props.task.isDone}
                onChange={onCheckboxChangeHandler}/>
         <EditableSpan value={props.task.title} onChange={onTitleChangeHandler}/>
-        <button onClick={onClickHandler}>{'delete'}</button>
+        <DeleteOutlined onClick={onClickHandler}/>
     </div>
 
 }

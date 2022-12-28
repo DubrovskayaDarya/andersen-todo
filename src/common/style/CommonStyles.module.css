@@ -8,7 +8,6 @@
     background: rgba(237, 237, 243, 0.77);
     border: 1px solid rgba(102, 102, 108, 0.77);
     border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .icon {

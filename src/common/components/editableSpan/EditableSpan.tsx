@@ -1,6 +1,5 @@
 import React, {ChangeEvent, useState} from 'react';
-import editIcon from '../../assets/edit-icon.svg'
-import iconStyle from '../../style/CommonStyles.module.css'
+import {EditOutlined, SaveOutlined} from "@ant-design/icons";
 
 type EditableSpanPropsType = {
     value: string
@@ -26,12 +25,10 @@ export const EditableSpan = React.memo(function (props: EditableSpanPropsType) {
     return editMode
         ? <>
             <input value={title} onChange={changeTitle} autoFocus/>
-            <button onClick={activateViewMode}>
-                {'save'}
-            </button>
+            <SaveOutlined onClick={activateViewMode}/>
         </>
-        : <>
+        : <div>
             <span>{props.value}</span>
-                <img onClick={activateEditMode} className={iconStyle.icon} alt={'edit-icon'} src={editIcon}/>
-        </>
+            <EditOutlined onClick={activateEditMode}/>
+        </div>
 });
