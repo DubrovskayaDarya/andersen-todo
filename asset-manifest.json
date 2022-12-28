@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/andersen-todo/static/css/main.ac2ad46e.css",
+    "main.js": "/andersen-todo/static/js/main.ea0b7fa1.js",
+    "static/js/787.1ccd5795.chunk.js": "/andersen-todo/static/js/787.1ccd5795.chunk.js",
+    "index.html": "/andersen-todo/index.html",
+    "main.ac2ad46e.css.map": "/andersen-todo/static/css/main.ac2ad46e.css.map",
+    "main.ea0b7fa1.js.map": "/andersen-todo/static/js/main.ea0b7fa1.js.map",
+    "787.1ccd5795.chunk.js.map": "/andersen-todo/static/js/787.1ccd5795.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac2ad46e.css",
+    "static/js/main.ea0b7fa1.js"
+  ]
+}
